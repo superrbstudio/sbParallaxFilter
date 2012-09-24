@@ -19,7 +19,8 @@
             filterNavigation        : 'nav#filter-nav ul',
             filterNavigationItem    : 'nav#filter-nav ul li a',
             filterNavigationCurrent : 'current',
-            notActiveClass          : 'not-active'
+            notActiveClass          : 'not-active',
+            huddleItems             : true
           }
                  
           var options =  $.extend(defaults, options);
@@ -148,10 +149,14 @@
                         } else {
                           sideMultiple = Math.floor(o.columnNum/2)-($(this).attr('data-col')-1);
                         }
+                        
+                          if(o.huddleItems == true) {
+                            huddleNonActive($(this), multiple, sideMultiple);
+                          } else {
 
-                          huddleNonActive($(this), multiple, sideMultiple);
+                          }
 
-                        shrinkNonActive($(this));             
+                          shrinkNonActive($(this));             
                       }
 
                     });       

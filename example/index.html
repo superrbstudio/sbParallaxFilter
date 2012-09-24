@@ -252,7 +252,7 @@
         //Shows default values
         $('#filter-results').sbParallaxFilter({
           columnNum               : 5, //number of columns
-          transTime               : 500, //transition time
+          transTime               : 250, //transition time
           movement                : 30, //zoom/movement level
           fadeToOpacity           : 0.3, //opacity to fade to
           parallaxAmount          : 0.2, //extremity of parallax effect - 1.0 being very high
@@ -261,7 +261,8 @@
           filterNavigation        : 'nav#filter-nav ul', //navigation container (ul for example)
           filterNavigationItem    : 'nav#filter-nav ul li a', //navigation container item (clicked item)
           filterNavigationCurrent : 'current', //class added to current nav item
-          notActiveClass          : 'not-active' //class added to all non-active items
+          notActiveClass          : 'not-active', //class added to all non-active items
+          huddleItems             : true
         });
 
     });   
