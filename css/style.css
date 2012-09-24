@@ -275,7 +275,6 @@ td { vertical-align: top; }
         section#filter-results article section.inner img {
           width: 100%;
           height: auto;
-          border-radius: 2px;
           }
           section#filter-results article.not-active {
             z-index: 200;
