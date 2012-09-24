@@ -263,13 +263,14 @@ td { vertical-align: top; }
       float: left;
       margin: 0 30px 30px 0;
       display: block;
-      z-index: 500;
+      z-index: 400;
       overflow: visible !important; /* Required for the parallax effect */
       }
       section#filter-results article section.inner {
         position: relative;
         background: #FFF;
         padding: 0;
+        border: 1px #336699 solid;
         }
         section#filter-results article section.inner img {
           width: 100%;

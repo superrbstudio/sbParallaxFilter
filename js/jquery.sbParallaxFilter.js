@@ -12,6 +12,7 @@
             parallaxAmount          : 0.2,
             movement                : 30,
             columnNum               : 5,
+            transTime               : 250,
             itemContainer           : 'article',
             itemContainerInner      : '.inner',
             resultsContainer        : this,
@@ -96,6 +97,8 @@
 
 
             $(o.filterNavigationItem).click(function(e){
+              
+              if($(this).parent().hasClass('current')) {return false;} 
 
               //define the active elements
               active = $(this).parent().attr('class');
@@ -176,7 +179,7 @@
                     huddleItem.animate({
                       top: '+='+topMove,
                       left: '+='+leftMove
-                    });
+                    }, o.transTime);
 
 
                 }
@@ -187,7 +190,7 @@
                     left: (o.movement/2),
                     top: (o.movement/2),
                     opacity: o.fadeToOpacity
-                  }, function(){
+                  }, o.transTime, function(){
                     shrinkItem.addClass(o.notActiveClass);
                     parallax();
                   });   
@@ -196,20 +199,21 @@
                 function reActiveate(activateItem) {
                   originalTop  = activateItem.attr('data-top');
                   originalLeft = activateItem.attr('data-left');
+                  activateItem.css('z-index', '500');
 
                   activateItem.animate({
                     top: originalTop,
                     left: originalLeft
-                  }, 200);
+                  }, o.transTime);
 
                   activateItem.find(o.itemContainerInner).animate({
                     width: itemContainerInnerWidth+'px',
                     top: 0,
                     left: 0,
                     opacity: 1
-                  }, 200, function(){
+                  }, o.transTime, function(){
                     activateItem.removeClass(o.notActiveClass);
-
+                    activateItem.css('z-index', '');
                   }); 
                 }
 
