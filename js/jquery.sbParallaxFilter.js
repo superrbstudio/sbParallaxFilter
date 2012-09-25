@@ -13,7 +13,7 @@
             movement                : 30,
             columnNum               : 5,
             transTime               : 250,
-            itemContainer           : 'article',
+            itemContainer           : 'section',
             itemContainerInner      : '.inner',
             resultsContainer        : this,
             filterNavigation        : 'nav#filter-nav ul',
