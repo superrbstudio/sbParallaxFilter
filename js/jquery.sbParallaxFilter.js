@@ -1,3 +1,17 @@
+/**
+ * sbParallaxFilter
+ * 
+ * Provides a parallax style way of filtering a list of HTML items
+ * 
+ * Written by Superrb Ltd http://www.superrb.com
+ * 
+ * For full instructions please go to:
+ * http://www.superrb.com/open-source/sb-parallax-filter
+ * 
+ * This software is released under an MIT licence, for more details:
+ * http://www.superrb.com/open-source/mit-licence
+ */
+
 (function($){
  
     $.fn.extend({ 
