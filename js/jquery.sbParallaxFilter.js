@@ -34,7 +34,8 @@
             filterNavigationItem    : 'nav#filter-nav ul li a',
             filterNavigationCurrent : 'current',
             notActiveClass          : 'not-active',
-            huddleItems             : true
+            huddleItems             : true,
+            staggerTime             : 30
           }
                  
           var options =  $.extend(defaults, options);
@@ -195,7 +196,9 @@
                     topMove = (o.movement*position);
                   }
 
-                    huddleItem.animate({
+                    huddleItem
+                    .delay(huddleItem.attr('data-row')*o.staggerTime) 
+                    .animate({
                       top: '+='+topMove,
                       left: '+='+leftMove
                     }, o.transTime);
@@ -204,7 +207,9 @@
                 }
 
                 function shrinkNonActive(shrinkItem) {
-                  shrinkItem.find(o.itemContainerInner).animate({
+                  shrinkItem.find(o.itemContainerInner)
+                  .delay(shrinkItem.attr('data-row')*o.staggerTime)
+                  .animate({
                     width: (itemContainerInnerWidth-o.movement)+'px',
                     left: (o.movement/2),
                     top: (o.movement/2),
@@ -220,12 +225,16 @@
                   originalLeft = activateItem.attr('data-left');
                   activateItem.css('z-index', '500');
 
-                  activateItem.animate({
+                  activateItem
+                  .delay(activateItem.attr('data-row')*o.staggerTime)
+                  .animate({
                     top: originalTop,
                     left: originalLeft
                   }, o.transTime);
 
-                  activateItem.find(o.itemContainerInner).animate({
+                  activateItem.find(o.itemContainerInner)
+                  .delay(activateItem.attr('data-row')*o.staggerTime)
+                  .animate({
                     width: itemContainerInnerWidth+'px',
                     top: 0,
                     left: 0,
